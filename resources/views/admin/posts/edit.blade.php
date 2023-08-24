@@ -45,7 +45,18 @@
                                     <input class="ps-3 form-control" type="file" id="image" name="image"
                                         value="{{ $post->image }}">
                                 </div>
-
+                                <!-- Select -->
+                                <div class="form-group mt-4">
+                                    <label class="control-lable">Categoria</label>
+                                    <select name="category_id" id="category_id" class="form-control">
+                                        <option value="">Seleziona categoria</option>
+                                        @foreach ($categories as $category)
+                                            <option
+                                                {{ $category->id == old('category_id', $post->category_id) ? 'selected' : '' }}
+                                                value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                                 <div class="col-12 text-center my-5">
                                     <!-- Submit Button -->
                                     <button type="submit" class="btn btn-success">Modifica</button>
