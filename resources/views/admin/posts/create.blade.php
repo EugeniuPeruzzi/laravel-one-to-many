@@ -39,10 +39,12 @@
                                 </label>
                                 <input class="ps-3 form-control" type="file" id="image" name="image">
                             </div>
+                            <!-- Select -->
                             <div class="form-group mt-4">
                                 <label class="control-lable">Categoria</label>
                                 <select name="category_id" id="category_id" class="form-control">
-                                    @foreach ($categroeis as $category)
+                                    <option value="">Seleziona categoria</option>
+                                    @foreach ($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
                                 </select>
